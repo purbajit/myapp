@@ -40,7 +40,7 @@ class Homescreen extends StatelessWidget {
       body: Center(
         child: RaisedButton(
           child: Text(
-            'Next screen',
+            'PATIENT ISSUE MENU',
             style: TextStyle(
               color: Colors.white,
             ),
