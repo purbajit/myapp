@@ -7,13 +7,12 @@ class DataTable extends StatefulWidget {
   //
   DataTable() : super();
 
-  final String title = 'Flutter Data Table';
+  final String title = 'PATIENT ISSUE MENU';
 
   @override
   DataTableState createState() => DataTableState();
 }
 
-.
 // The Debouncer class helps to add a delay to the search
 // that means when the class will wait for the user to stop for a defined time
 // and then start searching
@@ -40,12 +39,11 @@ class Debouncer {
 
 class DataTableState extends State<DataTable> {
   List<Drug> _drugs;
-  // this list will hold the filtered employees
+  // this list will hold the filtered drugss
   List<Drug> _filterDrugs;
   GlobalKey<ScaffoldState> _scaffoldKey;
-  // controller for the First Name TextField we are going to create.
+  // controller for the Drug Name TextField we are going to create.
   TextEditingController _drugNameController;
-  // controller for the Last Name TextField we are going to create.
   TextEditingController _programmeNameController;
   TextEditingController _batchNo;
   TextEditingController _expiryDate;
@@ -109,15 +107,22 @@ class DataTableState extends State<DataTable> {
 
   // Now lets add an Employee
   _addDrug() {
-    if (_drugNameController.text.isEmpty || _programmeNameController.text.isEmpty) {
+    if (_drugNameController.text.isEmpty ||
+        _programmeNameController.text.isEmpty) {
       print('Empty Fields');
       return;
     }
-    _showProgress('Adding Employee...');
-    Services.addDrug(_drugNameController.text, _programmeNameController.text,_batchNo.text ,_expiryDate.text,_manufacturingDate.text,_availableQnty.text)
+    _showProgress('Adding drug...');
+    Services.addDrug(
+            _drugNameController.text,
+            _programmeNameController.text,
+            _batchNo.text,
+            _expiryDate.text,
+            _manufacturingDate.text,
+            _availableQnty.text)
         .then((result) {
       if ('success' == result) {
-        _getDrugs(); // Refresh the List after adding each employee...
+        _getDrugs(); // Refresh the List after adding each drug...
         _clearValues();
       }
     });
@@ -142,7 +147,13 @@ class DataTableState extends State<DataTable> {
     });
     _showProgress('Updating Drug...');
     Services.updateDrug(
-            drug.id, _drugNameController.text, _programmeNameController.text,_batchNo.text ,_expiryDate.text,_manufacturingDate.text,_availableQnty.text)
+            drug.id,
+            _drugNameController.text,
+            _programmeNameController.text,
+            _batchNo.text,
+            _expiryDate.text,
+            _manufacturingDate.text,
+            _availableQnty.text)
         .then((result) {
       if ('success' == result) {
         _getDrugs(); // Refresh the list after update
@@ -167,7 +178,7 @@ class DataTableState extends State<DataTable> {
   _clearValues() {
     _drugNameController.text = '';
     _programmeNameController.text = '';
-    _batchNo.text = '' ;
+    _batchNo.text = '';
     _expiryDate.text = '';
     _manufacturingDate.text = '';
     _availableQnty.text = '';
@@ -186,7 +197,7 @@ class DataTableState extends State<DataTable> {
 // see the progress in the titlebar, its so fast...
 // :)
 
-  // Let's create a DataTable and show the employee list in it.
+  // Let's create a DataTable and show the drug list in it.
   SingleChildScrollView _dataBody() {
     // Both Vertical and Horozontal Scrollview for the DataTable to
     // scroll both Vertical and Horizontal...
@@ -222,6 +233,7 @@ class DataTableState extends State<DataTable> {
               label: Text('DELETE'),
             )
           ],
+
           // the list should show the filtered list now
           rows: _filterDrugs
               .map(
@@ -351,7 +363,9 @@ class DataTableState extends State<DataTable> {
                   .where((u) => (u.drugName
                           .toLowerCase()
                           .contains(string.toLowerCase()) ||
-                      u.programmeName.toLowerCase().contains(string.toLowerCase())))
+                      u.programmeName
+                          .toLowerCase()
+                          .contains(string.toLowerCase())))
                   .toList();
             });
           });
@@ -407,7 +421,7 @@ class DataTableState extends State<DataTable> {
                 ),
               ),
             ),
-             Padding(
+            Padding(
               padding: EdgeInsets.all(20.0),
               child: TextField(
                 controller: _programmeNameController,
@@ -416,7 +430,7 @@ class DataTableState extends State<DataTable> {
                 ),
               ),
             ),
-             Padding(
+            Padding(
               padding: EdgeInsets.all(20.0),
               child: TextField(
                 controller: _programmeNameController,
@@ -425,7 +439,7 @@ class DataTableState extends State<DataTable> {
                 ),
               ),
             ),
-             Padding(
+            Padding(
               padding: EdgeInsets.all(20.0),
               child: TextField(
                 controller: _programmeNameController,
@@ -434,7 +448,7 @@ class DataTableState extends State<DataTable> {
                 ),
               ),
             ),
-             Padding(
+            Padding(
               padding: EdgeInsets.all(20.0),
               child: TextField(
                 controller: _programmeNameController,

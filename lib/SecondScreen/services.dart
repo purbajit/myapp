@@ -11,7 +11,7 @@ class Services {
   static const _UPDATE_DRUG_ACTION = 'UPDATE_DRUG';
   static const _DELETE_DRUG_ACTION = 'DELETE_DRUG';
 
-  // Method to create the table Employees.
+  // Method to create the table Drugs.
   static Future<String> createTable() async {
     try {
       // add the parameters to pass to the request.
@@ -51,7 +51,7 @@ class Services {
     return parsed.map<Drug>((json) => Drug.fromJson(json)).toList();
   }
 
-  // Method to add employee to the database...
+  // Method to add Drug to the database...
   static Future<String> addDrug(
       String drugName,
       String programmeName,
@@ -80,7 +80,7 @@ class Services {
     }
   }
 
-  // Method to update an Employee in Database...
+  // Method to update an Drug in Database...
   static Future<String> updateDrug(
       String drugid,
       String drugName,
@@ -112,7 +112,7 @@ class Services {
     }
   }
 
-  // Method to Delete an Employee from Database...
+  // Method to Delete an Drug from Database...
   static Future<String> deleteDrug(String drugid) async {
     try {
       var map = Map<String, dynamic>();
