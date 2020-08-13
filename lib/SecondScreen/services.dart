@@ -4,7 +4,8 @@ import 'package:http/http.dart'
 import 'Drug.dart';
 
 class Services {
-  static const ROOT = 'http://localhost/DrugDB/Drug_names.php';
+  static const ROOT =
+      'http://196.1.113.93/dvdms/openIndentDrugFormMobile?userID=aizawlesi&programID=16197 ';
   static const _CREATE_TABLE_ACTION = 'CREATE_TABLE';
   static const _GET_ALL_ACTION = 'GET_ALL';
   static const _ADD_DRUG_ACTION = 'ADD_DRUG';

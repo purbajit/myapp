@@ -5,7 +5,7 @@ import 'dart:async';
 
 class DataTable extends StatefulWidget {
   //
-  DataTable() : super();
+  DataTable({List<DataColumn> columns, List<DataRow> rows}) : super();
 
   final String title = 'PATIENT ISSUE MENU';
 
@@ -229,9 +229,7 @@ class DataTableState extends State<DataTable> {
               label: Text('AVAILABLE QNTY'),
             ),
             // Lets add one more column to show a delete button
-            DataColumn(
-              label: Text('DELETE'),
-            )
+            DataColumn(label: Text('DELETE')),
           ],
 
           // the list should show the filtered list now

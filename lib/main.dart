@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:splashscreen/splashscreen.dart';
 import 'secondscreen.dart';
 import 'maindrawer.dart';
+// import 'loginscreen.dart';
 
 void main() => runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
