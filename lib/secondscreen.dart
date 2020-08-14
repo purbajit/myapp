@@ -4,8 +4,8 @@ import 'Drug.dart';
 import 'services.dart';
 import 'dart:async';
 // ignore: unused_import
-import 'package:http/http.dart' as http;
-//import 'dart:convert';
+// import 'package:http/http.dart' as http;
+import 'ProgramList.dart';
 
 // ignore: must_be_immutable
 class Secondscreen extends StatelessWidget {
@@ -61,37 +61,37 @@ class Secondscreen extends StatelessWidget {
                     {
                       "display": "Aizawl East DS",
                       "value": "Aizawl East DS",
+                    }
+                  ],
+                  textField: 'display',
+                  valueField: 'value',
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.all(16),
+                child: DropDownFormField(
+                  titleText: 'Parent Store',
+                  hintText: 'Please choose one',
+                  value: _programList,
+                  onSaved: (value) {
+                    setState(() {
+                      _programList = value;
+                    });
+                  },
+                  onChanged: (value) {
+                    setState(() {
+                      _programList = value;
+                    });
+                  },
+                  dataSource: [
+                    {
+                      'http://196.1.113.93/dvdms/openIndentDrugFormMobile?userID=aizawlesi&programID=16197 '
                     },
                   ],
                   textField: 'display',
                   valueField: 'value',
                 ),
               ),
-              // Container(
-              //   padding: EdgeInsets.all(16),
-              //   child: DropDownFormField(
-              //     titleText: 'Parent Store',
-              //     hintText: 'Please choose one',
-              //     value: _programList,
-              //     onSaved: (value) {
-              //       setState(() {
-              //         _programList = value;
-              //       });
-              //     },
-              //     onChanged: (value) {
-              //       setState(() {
-              //         _programList = value;
-              //       });
-              //     },
-              //     dataSource: [
-              //       {
-              //         'http://196.1.113.93/dvdms/openIndentDrugFormMobile?userID=aizawlesi&programID=16197 '
-              //       },
-              //     ],
-              //     textField: 'display',
-              //     valueField: 'value',
-              //   ),
-              // ),
               // Container(
               //   padding: EdgeInsets.all(16),
               //   child: DropDownFormField(
@@ -117,31 +117,31 @@ class Secondscreen extends StatelessWidget {
               //     valueField: 'value',
               //   ),
               // ),
-              // Container(
-              //   padding: EdgeInsets.all(16),
-              //   child: DropDownFormField(
-              //     titleText: 'Select Program*',
-              //     hintText: 'Please choose one',
-              //     value: _programList,
-              //     onSaved: (value) {
-              //       setState(() {
-              //         _programList = value;
-              //       });
-              //     },
-              //     onChanged: (value) {
-              //       setState(() {
-              //         _programList = value;
-              //       });
-              //     },
-              //     dataSource: [
-              //       {
-              //         'http://196.1.113.93/dvdms/openIndentDrugFormMobile?userID=aizawlesi&programID=16197 '
-              //       },
-              //     ],
-              //     textField: 'display',
-              //     valueField: 'value',
-              //   ),
-              // ),
+              Container(
+                padding: EdgeInsets.all(16),
+                child: DropDownFormField(
+                  titleText: 'Select Program*',
+                  hintText: 'Please choose one',
+                  value: _programList,
+                  onSaved: (value) {
+                    setState(() {
+                      _programList = value;
+                    });
+                  },
+                  onChanged: (value) {
+                    setState(() {
+                      _programList = value;
+                    });
+                  },
+                  dataSource: [
+                    {
+                      ProgramList(),
+                    },
+                  ],
+                  textField: 'display',
+                  valueField: 'value',
+                ),
+              ),
               Container(
                 padding: EdgeInsets.all(8),
                 child: RaisedButton(
@@ -160,7 +160,8 @@ class Secondscreen extends StatelessWidget {
     );
   }
 
-  void setState(Null Function() param0) {}
+  // ignore: non_constant_identifier_names
+  void setState(Null Function()) {}
 }
 
 class DataTable extends StatefulWidget {
