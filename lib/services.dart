@@ -1,6 +1,5 @@
 import 'dart:convert';
-import 'package:http/http.dart'
-    as http; // add the http plugin in pubspec.yaml file.
+import 'package:http/http.dart' as http;
 import 'Drug.dart';
 
 class Services {

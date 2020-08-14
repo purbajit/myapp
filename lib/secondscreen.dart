@@ -3,16 +3,20 @@ import 'dropdown_formfield.dart';
 import 'Drug.dart';
 import 'services.dart';
 import 'dart:async';
+// ignore: unused_import
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
+// ignore: must_be_immutable
 class Secondscreen extends StatelessWidget {
-  String _myActivity;
-  String _myActivityResult;
+  String _programList;
+  String _programListResult;
   final formKey = new GlobalKey<FormState>();
 
   void initState() {
     initState();
-    _myActivity = '';
-    _myActivityResult = '';
+    _programList = '';
+    _programListResult = '';
   }
 
   _saveForm() {
@@ -20,7 +24,7 @@ class Secondscreen extends StatelessWidget {
     if (form.validate()) {
       form.save();
       setState(() {
-        _myActivityResult = _myActivity;
+        _programListResult = _programList;
       });
     }
   }
@@ -40,23 +44,97 @@ class Secondscreen extends StatelessWidget {
               Container(
                 padding: EdgeInsets.all(16),
                 child: DropDownFormField(
-                  titleText: 'YOUR STORE',
+                  titleText: 'Your Store',
                   hintText: 'Please choose one',
-                  value: _myActivity,
+                  value: _programList,
                   onSaved: (value) {
                     setState(() {
-                      _myActivity = value;
+                      _programList = value;
                     });
                   },
                   onChanged: (value) {
                     setState(() {
-                      _myActivity = value;
+                      _programList = value;
                     });
                   },
                   dataSource: [
                     {
-                      "display": "Aizawl East DS",
-                      "value": "Aizawl East DS",
+                      'http://196.1.113.93/dvdms/openIndentDrugFormMobile?userID=aizawlesi&programID=16197 '
+                    },
+                  ],
+                  textField: 'display',
+                  valueField: 'value',
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.all(16),
+                child: DropDownFormField(
+                  titleText: 'Parent Store',
+                  hintText: 'Please choose one',
+                  value: _programList,
+                  onSaved: (value) {
+                    setState(() {
+                      _programList = value;
+                    });
+                  },
+                  onChanged: (value) {
+                    setState(() {
+                      _programList = value;
+                    });
+                  },
+                  dataSource: [
+                    {
+                      'http://196.1.113.93/dvdms/openIndentDrugFormMobile?userID=aizawlesi&programID=16197 '
+                    },
+                  ],
+                  textField: 'display',
+                  valueField: 'value',
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.all(16),
+                child: DropDownFormField(
+                  titleText: 'Office Indent/Letter No',
+                  hintText: 'Please choose one',
+                  value: _programList,
+                  onSaved: (value) {
+                    setState(() {
+                      _programList = value;
+                    });
+                  },
+                  onChanged: (value) {
+                    setState(() {
+                      _programList = value;
+                    });
+                  },
+                  dataSource: [
+                    {
+                      'http://196.1.113.93/dvdms/openIndentDrugFormMobile?userID=aizawlesi&programID=16197 '
+                    },
+                  ],
+                  textField: 'display',
+                  valueField: 'value',
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.all(16),
+                child: DropDownFormField(
+                  titleText: 'Select Program*',
+                  hintText: 'Please choose one',
+                  value: _programList,
+                  onSaved: (value) {
+                    setState(() {
+                      _programList = value;
+                    });
+                  },
+                  onChanged: (value) {
+                    setState(() {
+                      _programList = value;
+                    });
+                  },
+                  dataSource: [
+                    {
+                      'http://196.1.113.93/dvdms/openIndentDrugFormMobile?userID=aizawlesi&programID=16197 '
                     },
                   ],
                   textField: 'display',
@@ -72,7 +150,7 @@ class Secondscreen extends StatelessWidget {
               ),
               Container(
                 padding: EdgeInsets.all(16),
-                child: Text(_myActivityResult),
+                child: Text(_programListResult),
               )
             ],
           ),
@@ -186,7 +264,7 @@ class DataTableState extends State<DataTable> {
     });
   }
 
-  // Now lets add an Employee
+  // Now lets add a drug
   _addDrug() {
     if (_drugNameController.text.isEmpty ||
         _programmeNameController.text.isEmpty) {
@@ -274,10 +352,6 @@ class DataTableState extends State<DataTable> {
     _availableQnty.text = drug.availableQnty;
   }
 
-// Since the server is running locally you may not
-// see the progress in the titlebar, its so fast...
-// :)
-
   // Let's create a DataTable and show the drug list in it.
   SingleChildScrollView _dataBody() {
     // Both Vertical and Horozontal Scrollview for the DataTable to
@@ -323,7 +397,7 @@ class DataTableState extends State<DataTable> {
                     // textfields with the corresponding values to update
                     onTap: () {
                       _showValues(drug);
-                      // Set the Selected employee to Update
+                      // Set the Selected drug to Update
                       _selectedDrug = drug;
                       setState(() {
                         _isUpdating = true;
@@ -336,7 +410,7 @@ class DataTableState extends State<DataTable> {
                     ),
                     onTap: () {
                       _showValues(drug);
-                      // Set the Selected employee to Update
+                      // Set the Selected drug to Update
                       _selectedDrug = drug;
                       // Set flag updating to true to indicate in Update Mode
                       setState(() {
@@ -350,7 +424,7 @@ class DataTableState extends State<DataTable> {
                     ),
                     onTap: () {
                       _showValues(drug);
-                      // Set the Selected employee to Update
+                      // Set the Selected drug to Update
                       _selectedDrug = drug;
                       setState(() {
                         _isUpdating = true;
@@ -363,7 +437,7 @@ class DataTableState extends State<DataTable> {
                     ),
                     onTap: () {
                       _showValues(drug);
-                      // Set the Selected employee to Update
+                      // Set the Selected drug to Update
                       _selectedDrug = drug;
                       setState(() {
                         _isUpdating = true;
@@ -376,7 +450,7 @@ class DataTableState extends State<DataTable> {
                     ),
                     onTap: () {
                       _showValues(drug);
-                      // Set the Selected employee to Update
+                      // Set the Selected drug to Update
                       _selectedDrug = drug;
                       setState(() {
                         _isUpdating = true;
@@ -389,7 +463,7 @@ class DataTableState extends State<DataTable> {
                     ),
                     onTap: () {
                       _showValues(drug);
-                      // Set the Selected employee to Update
+                      // Set the Selected drug to Update
                       _selectedDrug = drug;
                       setState(() {
                         _isUpdating = true;
@@ -402,7 +476,7 @@ class DataTableState extends State<DataTable> {
                     ),
                     onTap: () {
                       _showValues(drug);
-                      // Set the Selected employee to Update
+                      // Set the Selected drug to Update
                       _selectedDrug = drug;
                       setState(() {
                         _isUpdating = true;
@@ -453,8 +527,7 @@ class DataTableState extends State<DataTable> {
     );
   }
 
-  // id is coming as String
-  // So let's update the model...
+  //  let's update the model...
 
   // UI
   @override
@@ -538,7 +611,7 @@ class DataTableState extends State<DataTable> {
             ),
 
             // Add an update button and a Cancel Button
-            // show these buttons only when updating an employee
+            // show these buttons only when updating an drug
             _isUpdating
                 ? Row(
                     children: <Widget>[
