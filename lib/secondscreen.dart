@@ -5,7 +5,7 @@ import 'services.dart';
 import 'dart:async';
 // ignore: unused_import
 import 'package:http/http.dart' as http;
-import 'dart:convert';
+//import 'dart:convert';
 
 // ignore: must_be_immutable
 class Secondscreen extends StatelessWidget {
@@ -59,88 +59,89 @@ class Secondscreen extends StatelessWidget {
                   },
                   dataSource: [
                     {
-                      'http://196.1.113.93/dvdms/openIndentDrugFormMobile?userID=aizawlesi&programID=16197 '
+                      "display": "Aizawl East DS",
+                      "value": "Aizawl East DS",
                     },
                   ],
                   textField: 'display',
                   valueField: 'value',
                 ),
               ),
-              Container(
-                padding: EdgeInsets.all(16),
-                child: DropDownFormField(
-                  titleText: 'Parent Store',
-                  hintText: 'Please choose one',
-                  value: _programList,
-                  onSaved: (value) {
-                    setState(() {
-                      _programList = value;
-                    });
-                  },
-                  onChanged: (value) {
-                    setState(() {
-                      _programList = value;
-                    });
-                  },
-                  dataSource: [
-                    {
-                      'http://196.1.113.93/dvdms/openIndentDrugFormMobile?userID=aizawlesi&programID=16197 '
-                    },
-                  ],
-                  textField: 'display',
-                  valueField: 'value',
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.all(16),
-                child: DropDownFormField(
-                  titleText: 'Office Indent/Letter No',
-                  hintText: 'Please choose one',
-                  value: _programList,
-                  onSaved: (value) {
-                    setState(() {
-                      _programList = value;
-                    });
-                  },
-                  onChanged: (value) {
-                    setState(() {
-                      _programList = value;
-                    });
-                  },
-                  dataSource: [
-                    {
-                      'http://196.1.113.93/dvdms/openIndentDrugFormMobile?userID=aizawlesi&programID=16197 '
-                    },
-                  ],
-                  textField: 'display',
-                  valueField: 'value',
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.all(16),
-                child: DropDownFormField(
-                  titleText: 'Select Program*',
-                  hintText: 'Please choose one',
-                  value: _programList,
-                  onSaved: (value) {
-                    setState(() {
-                      _programList = value;
-                    });
-                  },
-                  onChanged: (value) {
-                    setState(() {
-                      _programList = value;
-                    });
-                  },
-                  dataSource: [
-                    {
-                      'http://196.1.113.93/dvdms/openIndentDrugFormMobile?userID=aizawlesi&programID=16197 '
-                    },
-                  ],
-                  textField: 'display',
-                  valueField: 'value',
-                ),
-              ),
+              // Container(
+              //   padding: EdgeInsets.all(16),
+              //   child: DropDownFormField(
+              //     titleText: 'Parent Store',
+              //     hintText: 'Please choose one',
+              //     value: _programList,
+              //     onSaved: (value) {
+              //       setState(() {
+              //         _programList = value;
+              //       });
+              //     },
+              //     onChanged: (value) {
+              //       setState(() {
+              //         _programList = value;
+              //       });
+              //     },
+              //     dataSource: [
+              //       {
+              //         'http://196.1.113.93/dvdms/openIndentDrugFormMobile?userID=aizawlesi&programID=16197 '
+              //       },
+              //     ],
+              //     textField: 'display',
+              //     valueField: 'value',
+              //   ),
+              // ),
+              // Container(
+              //   padding: EdgeInsets.all(16),
+              //   child: DropDownFormField(
+              //     titleText: 'Office Indent/Letter No',
+              //     hintText: 'Please choose one',
+              //     value: _programList,
+              //     onSaved: (value) {
+              //       setState(() {
+              //         _programList = value;
+              //       });
+              //     },
+              //     onChanged: (value) {
+              //       setState(() {
+              //         _programList = value;
+              //       });
+              //     },
+              //     dataSource: [
+              //       {
+              //         'http://196.1.113.93/dvdms/openIndentDrugFormMobile?userID=aizawlesi&programID=16197 '
+              //       },
+              //     ],
+              //     textField: 'display',
+              //     valueField: 'value',
+              //   ),
+              // ),
+              // Container(
+              //   padding: EdgeInsets.all(16),
+              //   child: DropDownFormField(
+              //     titleText: 'Select Program*',
+              //     hintText: 'Please choose one',
+              //     value: _programList,
+              //     onSaved: (value) {
+              //       setState(() {
+              //         _programList = value;
+              //       });
+              //     },
+              //     onChanged: (value) {
+              //       setState(() {
+              //         _programList = value;
+              //       });
+              //     },
+              //     dataSource: [
+              //       {
+              //         'http://196.1.113.93/dvdms/openIndentDrugFormMobile?userID=aizawlesi&programID=16197 '
+              //       },
+              //     ],
+              //     textField: 'display',
+              //     valueField: 'value',
+              //   ),
+              // ),
               Container(
                 padding: EdgeInsets.all(8),
                 child: RaisedButton(
