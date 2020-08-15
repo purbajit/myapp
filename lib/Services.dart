@@ -4,7 +4,7 @@ import 'package:guist/models/Drug.dart';
 
 class Services {
   static const ROOT =
-      "http://196.1.113.93/dvdms/getStockList?userID=$userId&pageno=$pageNo";
+      'http://196.1.113.93/dvdms/openIndentDrugFormMobile?userID=aizawlesi&programID=16197';
   static const _CREATE_TABLE_ACTION = 'CREATE_TABLE';
   static const _GET_ALL_ACTION = 'GET_ALL';
   static const _ADD_DRUG_ACTION = 'ADD_DRUG';
