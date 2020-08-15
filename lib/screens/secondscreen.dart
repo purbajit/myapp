@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:guist/models/Drug.dart';
 import 'dropdown_formfield.dart';
 //import 'package:guist/services/httpservice.dart';
 import 'package:guist/services/api.dart';
@@ -57,7 +58,8 @@ class Secondscreen extends StatelessWidget {
                   },
                   dataSource: [
                     {
-                      API(),
+                      "display": "Aizawl East DS",
+                      "value": "Aizawl East DS",
                     }
                   ],
                   textField: 'display',
@@ -82,7 +84,8 @@ class Secondscreen extends StatelessWidget {
                   },
                   dataSource: [
                     {
-                      API(),
+                      "display": "SWH HQ MIZORAM",
+                      "value": "SWH HQ MIZORAM",
                     },
                   ],
                   textField: 'display',
@@ -106,9 +109,7 @@ class Secondscreen extends StatelessWidget {
                     });
                   },
                   dataSource: [
-                    {
-                      API(),
-                    },
+                    {},
                   ],
                   textField: 'display',
                   valueField: 'value',
@@ -131,9 +132,7 @@ class Secondscreen extends StatelessWidget {
                     });
                   },
                   dataSource: [
-                    {
-                      API(),
-                    },
+                    {ProgramList()},
                   ],
                   textField: 'display',
                   valueField: 'value',
