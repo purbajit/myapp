@@ -55,6 +55,22 @@ class Drug {
     stockList = json['stockList'];
   }
 
+  String get drugName => drugName;
+
+  String get programmeName => programmeName;
+
+  String get expiryDate => expiryDate;
+
+  String get batchNo => null;
+
+  String get packingDescription => packingDescription;
+
+  String get availableQty => null;
+
+  String get id => drugId;
+
+  get drugId => drugId;
+
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     // if (this.columns != null) {
@@ -172,6 +188,15 @@ class DrugList {
     unitPrice = json['unit_price'];
     updateValue = json['update_value'];
   }
+  String get id => drugId;
+
+  // String get drugName => drugName;
+
+  // String get programmeName => null;
+
+  // String get batchNo => null;
+
+  // String get expiryDate => null;
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();

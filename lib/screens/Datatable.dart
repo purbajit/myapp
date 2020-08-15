@@ -191,8 +191,8 @@ class DataTableState extends State<DataTable> {
     _programmeNameController.text = drug.programmeName;
     _batchNo.text = drug.batchNo;
     _expiryDate.text = drug.expiryDate;
-    _manufacturingDate.text = drug.manufacturingDate;
-    _availableQnty.text = drug.availableQnty;
+    _manufacturingDate.text = drug.packingDescription;
+    _availableQnty.text = drug.availableQty;
   }
 
   // Let's create a DataTable and show the drug list in it.
@@ -221,7 +221,7 @@ class DataTableState extends State<DataTable> {
               label: Text('EXPIRY DATE'),
             ),
             DataColumn(
-              label: Text('MANUFACTURING DATE'),
+              label: Text('PACCKING DESCRIPTION'),
             ),
             DataColumn(
               label: Text('AVAILABLE QNTY'),
@@ -302,7 +302,7 @@ class DataTableState extends State<DataTable> {
                   ),
                   DataCell(
                     Text(
-                      drug.manufacturingDate.toUpperCase(),
+                      drug.packingDescription.toUpperCase(),
                     ),
                     onTap: () {
                       _showValues(drug);
@@ -315,7 +315,7 @@ class DataTableState extends State<DataTable> {
                   ),
                   DataCell(
                     Text(
-                      drug.availableQnty.toUpperCase(),
+                      drug.availableQty.toUpperCase(),
                     ),
                     onTap: () {
                       _showValues(drug);
