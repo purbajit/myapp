@@ -92,29 +92,32 @@ class Secondscreen extends StatelessWidget {
                   valueField: 'value',
                 ),
               ),
-              Container(
-                padding: EdgeInsets.all(16),
-                child: DropDownFormField(
-                  titleText: 'Office Indent/Letter No',
-                  hintText: 'Please choose one',
-                  value: _programList,
-                  onSaved: (value) {
-                    setState(() {
-                      _programList = value;
-                    });
-                  },
-                  onChanged: (value) {
-                    setState(() {
-                      _programList = value;
-                    });
-                  },
-                  dataSource: [
-                    {},
-                  ],
-                  textField: 'display',
-                  valueField: 'value',
-                ),
-              ),
+              // Container(
+              //   padding: EdgeInsets.all(16),
+              //   child: DropDownFormField(
+              //     titleText: 'Office Indent/Letter No',
+              //     hintText: 'Please choose one',
+              //     value: _programList,
+              //     onSaved: (value) {
+              //       setState(() {
+              //         _programList = value;
+              //       });
+              //     },
+              //     onChanged: (value) {
+              //       setState(() {
+              //         _programList = value;
+              //       });
+              //     },
+              //     dataSource: [
+              //       {
+              //         "display":"s16193",
+              //         "value": "s16193",
+              //       },
+              //     ],
+              //     textField: 'display',
+              //     valueField: 'value',
+              //   ),
+              // ),
               Container(
                 padding: EdgeInsets.all(16),
                 child: DropDownFormField(
@@ -132,7 +135,10 @@ class Secondscreen extends StatelessWidget {
                     });
                   },
                   dataSource: [
-                    {ProgramList()},
+                    {
+                      "display": "s16193",
+                      "value": "s16193",
+                    },
                   ],
                   textField: 'display',
                   valueField: 'value',
