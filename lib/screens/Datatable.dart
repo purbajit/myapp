@@ -221,7 +221,7 @@ class DataTableState extends State<DataTable> {
               label: Text('EXPIRY DATE'),
             ),
             DataColumn(
-              label: Text('PACCKING DESCRIPTION'),
+              label: Text('PACKING DESCRIPTION'),
             ),
             DataColumn(
               label: Text('AVAILABLE QNTY'),
