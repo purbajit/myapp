@@ -149,7 +149,7 @@ class DataTableState extends State<DataTable> {
     });
     _showProgress('Updating Drug...');
     Services.updateDrug(
-            drug.id,
+            //drug.id,
             _drugNameController.text,
             _programmeNameController.text,
             _batchNo.text,
@@ -180,7 +180,7 @@ class DataTableState extends State<DataTable> {
   _clearValues() {
     _drugNameController.text = '';
     _programmeNameController.text = '';
-    _batchNo.text = '';
+    // _batchNo.text = '';
     _expiryDate.text = '';
     _manufacturingDate.text = '';
     _availableQnty.text = '';
@@ -189,7 +189,7 @@ class DataTableState extends State<DataTable> {
   _showValues(Drug drug) {
     _drugNameController.text = drug.drugName;
     _programmeNameController.text = drug.programmeName;
-    _batchNo.text = drug.batchNo;
+    //_batchNo.text = drug.batchNo;
     _expiryDate.text = drug.expiryDate;
     _manufacturingDate.text = drug.packingDescription;
     _availableQnty.text = drug.availableQty;
@@ -287,19 +287,19 @@ class DataTableState extends State<DataTable> {
                       });
                     },
                   ),
-                  DataCell(
-                    Text(
-                      drug.batchNo.toUpperCase(),
-                    ),
-                    onTap: () {
-                      _showValues(drug);
-                      // Set the Selected drug to Update
-                      _selectedDrug = drug;
-                      setState(() {
-                        _isUpdating = true;
-                      });
-                    },
-                  ),
+                  // DataCell(
+                  //   Text(
+                  //     drug.batchNo.toUpperCase(),
+                  //   ),
+                  //   onTap: () {
+                  //     _showValues(drug);
+                  //     // Set the Selected drug to Update
+                  //     _selectedDrug = drug;
+                  //     setState(() {
+                  //       _isUpdating = true;
+                  //     });
+                  //   },
+                  // ),
                   DataCell(
                     Text(
                       drug.packingDescription.toUpperCase(),

@@ -118,13 +118,13 @@ class Homescreen extends StatelessWidget {
                   ),
                 ));
               }
-              return Column(
-                children: snapshot.data.data
-                    .map((e) => ListItem(
-                          data: e,
-                        ))
-                    .toList(),
-              );
+              // return Column(
+              //   children: snapshot.data.data
+              //       .map((e) => ListItem(
+              //             data: e,
+              //           ))
+              //       .toList(),
+              // );
             }
             return Center(
                 child: Text(

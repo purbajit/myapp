@@ -82,7 +82,7 @@ class Services {
 
   // Method to update an Drug in Database...
   static Future<String> updateDrug(
-      String drugid,
+      //String drugid,
       String drugName,
       String programmeName,
       String batchNo,
@@ -92,7 +92,7 @@ class Services {
     try {
       var map = Map<String, dynamic>();
       map['action'] = _UPDATE_DRUG_ACTION;
-      map['drug_id'] = drugid;
+      //map['drug_id'] = drugid;
       map['drug_name'] = drugName;
       map['Programme_name'] = programmeName;
       map['Batch_No'] = batchNo;
