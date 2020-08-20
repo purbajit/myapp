@@ -35,7 +35,7 @@ class Secondscreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('INDENT DRUGS'),
+        title: Text("INDENT DRUGS"),
       ),
       body: Center(
         child: Form(
@@ -46,8 +46,8 @@ class Secondscreen extends StatelessWidget {
               Container(
                 padding: EdgeInsets.all(16),
                 child: DropDownFormField(
-                  titleText: 'Your Store',
-                  hintText: 'Please choose one',
+                  titleText: "Your Store",
+                  hintText: "Please choose one",
                   value: programList,
                   onSaved: (value) {
                     setState(() {
@@ -65,15 +65,15 @@ class Secondscreen extends StatelessWidget {
                       "value": "Aizawl East DS",
                     }
                   ],
-                  textField: 'display',
-                  valueField: 'value',
+                  textField: "display",
+                  valueField: "value",
                 ),
               ),
               Container(
                 padding: EdgeInsets.all(16),
                 child: DropDownFormField(
-                  titleText: 'Parent Store',
-                  hintText: 'Please choose one',
+                  titleText: "Parent Store",
+                  hintText: "Please choose one",
                   value: programList,
                   onSaved: (value) {
                     setState(() {
@@ -91,8 +91,8 @@ class Secondscreen extends StatelessWidget {
                       "value": "SWH HQ MIZORAM",
                     },
                   ],
-                  textField: 'display',
-                  valueField: 'value',
+                  textField: "display",
+                  valueField: "value",
                 ),
               ),
               // Container(
@@ -124,8 +124,8 @@ class Secondscreen extends StatelessWidget {
               Container(
                 padding: EdgeInsets.all(16),
                 child: DropDownFormField(
-                  titleText: 'Select Program*',
-                  hintText: 'Please choose one',
+                  titleText: "Select Program*",
+                  hintText: "Please choose one",
                   value: programList,
                   onSaved: (value) {
                     setState(() {
@@ -143,8 +143,8 @@ class Secondscreen extends StatelessWidget {
                       "value": "s16193",
                     },
                   ],
-                  textField: 'display',
-                  valueField: 'value',
+                  textField: "display",
+                  valueField: "value",
                 ),
               ),
               Container(
@@ -169,13 +169,13 @@ class Secondscreen extends StatelessWidget {
                       "value": "s16193",
                     },
                   ],
-                  textField: 'display',
-                  valueField: 'value',
+                  textField: "display",
+                  valueField: "value",
                 ),
               ),
               Container(
                 padding: EdgeInsets.all(16),
-                child: Text('New Indent Drug Details'),
+                child: Text("New Indent Drug Details"),
               ),
               Container(
                 padding: EdgeInsets.all(16),
@@ -195,23 +195,23 @@ class Secondscreen extends StatelessWidget {
                           child: DataTable(
                             columns: [
                               DataColumn(
-                                  label: Text('DRUG ID'),
+                                  label: Text("DRUG ID"),
                                   tooltip: 'represents id of the drug.'),
                               DataColumn(
-                                  label: Text('DRUG NAME'),
+                                  label: Text("DRUG NAME"),
                                   tooltip: 'represents name of the drug.'),
                               DataColumn(
-                                  label: Text('PROGRAMME Id'),
+                                  label: Text("PROGRAMME Id"),
                                   tooltip: 'represents id of programme'),
                               DataColumn(
-                                  label: Text('PROGRAMME NAME'),
+                                  label: Text("PROGRAMME NAME"),
                                   tooltip: 'represents name of programme'),
                               DataColumn(
-                                  label: Text('PACKING DESCRIPTION'),
+                                  label: Text("PACKING DESCRIPTION"),
                                   tooltip:
                                       'represents description of packaging'),
                               DataColumn(
-                                  label: Text('AVAILABLE QNTY'),
+                                  label: Text("AVAILABLE QNTY"),
                                   tooltip:
                                       'represents qnty of drugs available'),
                             ],
@@ -247,13 +247,13 @@ class Secondscreen extends StatelessWidget {
               Container(
                 padding: EdgeInsets.all(8),
                 child: RaisedButton(
-                  child: Text('Save'),
+                  child: Text("Save"),
                   onPressed: _saveForm,
                 ),
               ),
               Container(
                 padding: EdgeInsets.all(16),
-                child: Text(programListResult),
+                child: Text("programListResult"),
               )
             ],
           ),

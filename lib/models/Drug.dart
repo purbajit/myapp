@@ -20,30 +20,30 @@ class Drug {
       });
     }
   }
-  String get drugName => drugName;
+  // String get drugName => drugName;
 
-  String get programmeName => programmeName;
+  // String get programmeName => programmeName;
 
-  String get expiryDate => expiryDate;
-  String get packingDescription => packingDescription;
+  // String get expiryDate => expiryDate;
+  // String get packingDescription => packingDescription;
 
-  String get availableQty => availableQty;
-  String get id => drugId;
+  // String get availableQty => availableQty;
+  // String get id => drugId;
 
-  get drugId => drugId;
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['columns'] = columns;
-    data['data'] = data;
+  // get drugId => drugId;
+  // Map<String, dynamic> toJson() {
+  //   final Map<String, dynamic> data = new Map<String, dynamic>();
+  //   data['columns'] = columns;
+  //   data['data'] = data;
 
-    if (drugList != null) {
-      data['drugList'] = drugList.map((v) => v.toJson()).toList();
-    }
-    if (drugList != null) {
-      data['programList'] = drugList.map((v) => v.toJson()).toList();
-    }
-    return data;
-  }
+  //   if (drugList != null) {
+  //     data['drugList'] = drugList.map((v) => v.toJson()).toList();
+  //   }
+  //   if (drugList != null) {
+  //     data['programList'] = drugList.map((v) => v.toJson()).toList();
+  //   }
+  //   return data;
+  // }
 }
 
 class DrugList {
@@ -67,16 +67,16 @@ class DrugList {
     // verified = json['verified'];
   }
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['available_qty'] = availableQty;
-    data['drug_id'] = drugId;
-    data['drug_name'] = drugName;
-    data['packing_description'] = packingDescription;
-    data['programme_id'] = programmeId;
-    data['programme_name'] = programmeName;
-    return data;
-  }
+  // Map<String, dynamic> toJson() {
+  //   final Map<String, dynamic> data = new Map<String, dynamic>();
+  //   data['available_qty'] = availableQty;
+  //   data['drug_id'] = drugId;
+  //   data['drug_name'] = drugName;
+  //   data['packing_description'] = packingDescription;
+  //   data['programme_id'] = programmeId;
+  //   data['programme_name'] = programmeName;
+  //   return data;
+  // }
 }
 
 class ProgramList {
@@ -87,10 +87,10 @@ class ProgramList {
     programmeId = json['programme_id'];
     programmeName = json['programme_name'];
   }
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['programme_id'] = programmeId;
-    data['programme_name'] = programmeName;
-    return data;
-  }
+  // Map<String, dynamic> toJson() {
+  //   final Map<String, dynamic> data = new Map<String, dynamic>();
+  //   data['programme_id'] = programmeId;
+  //   data['programme_name'] = programmeName;
+  //   return data;
+  // }
 }
