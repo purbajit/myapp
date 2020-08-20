@@ -4,33 +4,36 @@ import 'package:guist/models/Drug.dart';
 import 'package:guist/services/httpservice.dart';
 import 'secondscreen.dart';
 import 'maindrawer.dart';
-import 'package:guist/screens/ListItem.dart';
+// import 'package:guist/screens/ListItem.dart';
 
+// ignore: must_be_immutable
 class Homescreen extends StatelessWidget {
   var httpService = HttpService();
-  int _counter = 0;
+  // int _counter = 0;
   final ScrollController _scrollController = ScrollController();
-  bool _stop = false;
-  List<Widget> _listMedicines = [];
+  // bool _stop = false;
+  // List<Widget> _listMedicines = [];
 
   @override
+  // ignore: override_on_non_overriding_member
   void dispose() {
-    // TODO: implement dispose
+    // ignore: todo
+
     _scrollController.dispose();
     // super.dispose();
   }
 
-  void initState() {
-    _loadMedicines();
-    _scrollController.addListener(() {
-      if (_scrollController.position.pixels ==
-          _scrollController.position.maxScrollExtent) {
-        if (!_stop) {
-          _loadMedicines();
-        }
-      }
-    });
-  }
+  // void initState() {
+  //   _loadMedicines();
+  //   _scrollController.addListener(() {
+  //     if (_scrollController.position.pixels ==
+  //         _scrollController.position.maxScrollExtent) {
+  //       if (!_stop) {
+  //         _loadMedicines();
+  //       }
+  //     }
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -99,49 +102,49 @@ class Homescreen extends StatelessWidget {
         ));
   }
 
-  _loadMedicines() {
-    _counter++;
-    setState(() {
-      _listMedicines.add(FutureBuilder<Drug>(
-        future: httpService.getData(pageNo: _counter),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.done) {
-            if (snapshot.hasData) {
-              _stop = false;
-              if (snapshot.data.data.length == 0) {
-                _stop = true;
-                return Center(
-                    child: Text(
-                  "No More Medicines",
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
-                ));
-              }
-              // return Column(
-              //   children: snapshot.data.data
-              //       .map((e) => ListItem(
-              //             data: e,
-              //           ))
-              //       .toList(),
-              // );
-            }
-            return Center(
-                child: Text(
-              "No Data",
-              style: TextStyle(
-                color: Colors.white,
-              ),
-            ));
-          }
-          _stop = true;
-          return Center(
-            child: CircularProgressIndicator(),
-          );
-        },
-      ));
-    });
-  }
+//   _loadMedicines() {
+//     _counter++;
+//     setState(() {
+//       _listMedicines.add(FutureBuilder<Drug>(
+//         future: httpService.getData(pageNo: _counter),
+//         builder: (context, snapshot) {
+//           if (snapshot.connectionState == ConnectionState.done) {
+//             if (snapshot.hasData) {
+//               _stop = false;
+//               if (snapshot.data.data.length == 0) {
+//                 _stop = true;
+//                 return Center(
+//                     child: Text(
+//                   "No More Medicines",
+//                   style: TextStyle(
+//                     color: Colors.white,
+//                   ),
+//                 ));
+//               }
+//               // return Column(
+//               //   children: snapshot.data.data
+//               //       .map((e) => ListItem(
+//               //             data: e,
+//               //           ))
+//               //       .toList(),
+//               // );
+//             }
+//             return Center(
+//                 child: Text(
+//               "No Data",
+//               style: TextStyle(
+//                 color: Colors.white,
+//               ),
+//             ));
+//           }
+//           _stop = true;
+//           return Center(
+//             child: CircularProgressIndicator(),
+//           );
+//         },
+//       ));
+//     });
+//   }
 
-  void setState(Null Function() param0) {}
+//   void setState(Null Function() param0) {}
 }

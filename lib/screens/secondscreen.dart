@@ -9,16 +9,16 @@ import 'package:provider/provider.dart';
 
 // ignore: must_be_immutable
 class Secondscreen extends StatelessWidget {
-  String _programList;
-  String _listMedicines;
-  String _programListResult;
+  String programList;
+  String drugList;
+  String programListResult;
   final formKey = new GlobalKey<FormState>();
 
   void initState() {
     initState();
-    _programList = '';
-    _programListResult = '';
-    _listMedicines = '';
+    programList = '';
+    programListResult = '';
+    drugList = '';
   }
 
   _saveForm() {
@@ -26,7 +26,7 @@ class Secondscreen extends StatelessWidget {
     if (form.validate()) {
       form.save();
       setState(() {
-        _programListResult = _programList;
+        programListResult = programList;
       });
     }
   }
@@ -48,15 +48,15 @@ class Secondscreen extends StatelessWidget {
                 child: DropDownFormField(
                   titleText: 'Your Store',
                   hintText: 'Please choose one',
-                  value: _programList,
+                  value: programList,
                   onSaved: (value) {
                     setState(() {
-                      _programList = value;
+                      programList = value;
                     });
                   },
                   onChanged: (value) {
                     setState(() {
-                      _programList = value;
+                      programList = value;
                     });
                   },
                   dataSource: [
@@ -74,15 +74,15 @@ class Secondscreen extends StatelessWidget {
                 child: DropDownFormField(
                   titleText: 'Parent Store',
                   hintText: 'Please choose one',
-                  value: _programList,
+                  value: programList,
                   onSaved: (value) {
                     setState(() {
-                      _programList = value;
+                      programList = value;
                     });
                   },
                   onChanged: (value) {
                     setState(() {
-                      _programList = value;
+                      programList = value;
                     });
                   },
                   dataSource: [
@@ -100,15 +100,15 @@ class Secondscreen extends StatelessWidget {
               //   child: DropDownFormField(
               //     titleText: 'Office Indent/Letter No',
               //     hintText: 'Please choose one',
-              //     value: _programList,
+              //     value: programList,
               //     onSaved: (value) {
               //       setState(() {
-              //         _programList = value;
+              //         programList = value;
               //       });
               //     },
               //     onChanged: (value) {
               //       setState(() {
-              //         _programList = value;
+              //         programList = value;
               //       });
               //     },
               //     dataSource: [
@@ -126,15 +126,15 @@ class Secondscreen extends StatelessWidget {
                 child: DropDownFormField(
                   titleText: 'Select Program*',
                   hintText: 'Please choose one',
-                  value: _programList,
+                  value: programList,
                   onSaved: (value) {
                     setState(() {
-                      _programList = value;
+                      programList = value;
                     });
                   },
                   onChanged: (value) {
                     setState(() {
-                      _programList = value;
+                      programList = value;
                     });
                   },
                   dataSource: [
@@ -152,15 +152,15 @@ class Secondscreen extends StatelessWidget {
                 child: DropDownFormField(
                   titleText: 'DrugList*',
                   hintText: 'Please choose one',
-                  value: _listMedicines,
+                  value: drugList,
                   onSaved: (value) {
                     setState(() {
-                      _listMedicines = value;
+                      drugList = value;
                     });
                   },
                   onChanged: (value) {
                     setState(() {
-                      _listMedicines = value;
+                      drugList = value;
                     });
                   },
                   dataSource: [
@@ -172,6 +172,10 @@ class Secondscreen extends StatelessWidget {
                   textField: 'display',
                   valueField: 'value',
                 ),
+              ),
+              Container(
+                padding: EdgeInsets.all(16),
+                child: Text('New Indent Drug Details'),
               ),
               Container(
                 padding: EdgeInsets.all(16),
@@ -249,7 +253,7 @@ class Secondscreen extends StatelessWidget {
               ),
               Container(
                 padding: EdgeInsets.all(16),
-                child: Text(_programListResult),
+                child: Text(programListResult),
               )
             ],
           ),
