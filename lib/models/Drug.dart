@@ -80,12 +80,44 @@ class DrugList {
 }
 
 class ProgramList {
-  String programmeId;
-  String programmeName;
+  String s16193;
+  String s16197;
+  String s16201;
+  String s16203;
+  String s16206;
+  String s16209;
+  String s16238;
+  String s16239;
+  String s16240;
+  String s16241;
+  String s16242;
+  String s16243;
+  String s16244;
+  String s16246;
+  String s16247;
+  String s16248;
+  String s16249;
+  String s16250;
 
   ProgramList.fromJson(Map<String, dynamic> json) {
-    programmeId = json['programme_id'];
-    programmeName = json['programme_name'];
+    s16193 = json['16193'];
+    s16197 = json['16197'];
+    s16201 = json['16201'];
+    s16203 = json['16203'];
+    s16206 = json['16206'];
+    s16209 = json['16209'];
+    s16238 = json['16238'];
+    s16239 = json['16239'];
+    s16240 = json['16240'];
+    s16241 = json['16241'];
+    s16242 = json['16242'];
+    s16243 = json['16243'];
+    s16244 = json['16244'];
+    s16246 = json['16246'];
+    s16247 = json['16247'];
+    s16248 = json['16248'];
+    s16249 = json['16249'];
+    s16250 = json['16250'];
   }
   // Map<String, dynamic> toJson() {
   //   final Map<String, dynamic> data = new Map<String, dynamic>();
